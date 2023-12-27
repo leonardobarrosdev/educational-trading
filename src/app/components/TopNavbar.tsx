@@ -1,15 +1,11 @@
 'use client'
 import { useState } from 'react'
 import 'material-symbols'
-
-type linkProps = {
-  name: string,
-  link: string
-}
+import { Button } from './controllers/Button'
 
 export function TopNavbar() {
   let [open, setOpen] = useState(false)
-  let Links = [
+  let sectionLinks = [
     {name: "HOME", link: "#"},
     {name: "EXCHANGE RATER", link: "#"},
     {name: "FEATURE", link: "#"},
@@ -19,29 +15,27 @@ export function TopNavbar() {
   ]
 
   return (
-    <div className="flex md:1 lg:w-100 h-28 gap-10 items-center bg-[white]">
-      <nav className="flex justify-between items-center w-[92%] mx-auto">
+    <div className="fixed top-0 left-0 flex w-full md:h-28 bg-white">
+      <nav className="md:container md:flex justify-between items-center py-4 px-7">
         <div>
           <h1 className="text-xxl weight-400 font-normal">Brand</h1>
         </div>
-        <div className="nav-links duraction-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
-          <ul className="flex md:flex-row flex-col md:gap-[4vw] gap-8">
-            {
-              Links.map((link) => {
-                <li>
-                  <a href={link.link} className="hover:bg-[danger] hover:text-[white]">{link.name}</a>
-                </li>
-              })
-            }
-          </ul>
+        <div className="md:hidden absolute right-8 top-6 cursor-point rounded-lg border-solid">
+          <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>
         </div>
-        <div className="flex items-center gap-6">
-          <div className="flex gap-1 text-md">
-            <button className="bg-[primary] text-white py-1">SIGN UP</button>
-            <button className="primary">LOGIN</button>
+        <ul className={`md:flex md:items-center md:static md:z-auto md:w-auto md:pb-0 md:gap-0 absolute z-[-1] pb-12 left-0 pl-9 w-full transition-all duration-500 ease-in ${open? 'top-20':'top-[-490px]'}`}>
+          {
+            sectionLinks.map((link) => (
+              <li key={link.name} className="md:py-14 md:px-4 hover:bg-danger hover:text-[white]">
+                <a href={link.link}>{link.name}</a>
+              </li>
+            ))
+          }
+          <div className="flex gap-1 md:ml-4 text-md">
+            <Button title="SIGN UP" />
+            <Button title="LOGIN" />
           </div>
-          <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl cursor-point md-hidden">{open? "close" : "menu"}</span>
-        </div>
+        </ul>
       </nav>
     </div>
   )

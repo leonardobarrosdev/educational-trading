@@ -14,13 +14,9 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
-    // screens: {
-    //   'sm': {'min': '576px', 'max': '576px'},
-    //   'md': {'min': '768px', 'max': '1023px'},
-    //   'lg': {'min': '1024px', 'max': '1279px'},
-    //   'xl': {'min': '1280px', 'max': '1535px'},
-    //   '2xl': {'min': '1536px'},
-    // },
+    container: {
+      center: true
+    },
     fontFamily: {
       display: ['Mulish', 'Helvetica'],
       body: ['Mulish', 'Helvetica', 'Arial', 'sans-serif']
