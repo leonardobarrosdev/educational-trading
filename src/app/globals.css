@@ -6,6 +6,25 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --primary: rgba(12, 69, 124, 1);
+  --warning: rgba(245, 212, 92, 1);
+  --info: rgba(66, 153, 237, 1);
+
+  --white: rgba(247, 251, 254, 1);
+  --black: rgba(1, 8, 14, 1);
+  --danger: rgba(125, 29, 12, 1);
+  --gray: rgba(116, 124, 135, 1);
+  --green: rgba(12, 125, 105, 1);
+
+  --blue-light: rgba(106, 152, 231, 1);
+  --gray-light: rgba(230, 234, 239, 1);
+  --yellow-light: rgba(252, 241, 201, 1);
+  --black-blue: rgba(25, 30, 43, 1);
+  --gradient-black: rgba(0, 0, 0, 0.2);
+
+  --gray-background: rgba(252, 253, 253, 1);
+  --gray-text: rgba(54, 68, 82, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +36,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--gray-text);
+  background: var(--gray-background)
 }
