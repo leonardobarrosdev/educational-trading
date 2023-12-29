@@ -18,8 +18,8 @@ const config: Config = {
       center: true
     },
     fontFamily: {
-      display: ['Mulish', 'Helvetica'],
-      body: ['Mulish', 'Helvetica', 'Arial', 'sans-serif']
+      display: ['Muli', 'sans-serif'],
+      body: ['Muli', 'Helvetica', 'Arial', 'sans-serif']
     },
     fontSize: {
       sm: ['14px', '20px'],

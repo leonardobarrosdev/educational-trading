@@ -15,28 +15,30 @@ export function TopNavbar() {
   ]
 
   return (
-    <div className="fixed top-0 left-0 flex w-full md:h-28 bg-white">
-      <nav className="md:container md:flex justify-between items-center py-4 px-7">
-        <div>
-          <h1 className="text-xxl weight-400 font-normal">Brand</h1>
-        </div>
-        <div className="md:hidden absolute right-8 top-6 cursor-point rounded-lg border-solid">
-          <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>
-        </div>
-        <ul className={`md:flex md:items-center md:static md:z-auto md:w-auto md:pb-0 md:gap-0 absolute z-[-1] pb-12 left-0 pl-9 w-full transition-all duration-500 ease-in ${open? 'top-20':'top-[-490px]'}`}>
-          {
-            sectionLinks.map((link) => (
-              <li key={link.name} className="md:py-14 md:px-4 hover:bg-danger hover:text-[white]">
-                <a href={link.link}>{link.name}</a>
-              </li>
-            ))
-          }
-          <div className="flex gap-1 md:ml-4 text-md">
+    <div className="md:fixed md:min-w-full bg-white">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+        <nav className="relative z-50 flex justify-between">
+          <div className="flex items-center md:gap-x-12">
+            <h1 className="text-xxl weight-400 font-normal">Brand</h1>
+            <ul className="hidden md:flex md:gap-x-6">
+              {
+                sectionLinks.map((link) => (
+                  <li key={link.name} className="md:py-8 md:px-4 hover:bg-danger hover:text-[white]">
+                    <a href={link.link}>{link.name}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div className="flex items-center gap-x-2 md:gap-x-3">
             <Button title="SIGN UP" />
             <Button title="LOGIN" />
+            <div className="-mr-1 md:hidden">
+              <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>
+            </div>
           </div>
-        </ul>
-      </nav>
+        </nav>
+      </div>
     </div>
   )
 }
