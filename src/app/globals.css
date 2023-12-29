@@ -22,6 +22,7 @@
   --yellow-light: rgba(252, 241, 201, 1);
   --black-blue: rgba(25, 30, 43, 1);
   --gradient-black: rgba(0, 0, 0, 0.2);
+  --background-gradient: var(--gradient-black, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), lightgray 50% / cover no-repeat);
 
   --gray-background: rgba(252, 253, 253, 1);
   --gray-text: rgba(54, 68, 82, 1);
@@ -49,3 +50,16 @@ body {
 
 .text-2xl { font-size: 1.5rem }
 .text-4xl { font-size: 2.5rem }
+.text-highlight {
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  color: var(--danger)
+}
+
+.card-from-step {
+  padding: 0.875rem 0.625rem;
+  border: 2px solid var(--danger);
+  border-radius: 0.375rem;
+}
+
+.background-gradient { background-image: linear-gradient(to right, rgba(125, 29, 12, 1) 35%, rgba(12, 69, 124, 1)) }
