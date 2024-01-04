@@ -39,6 +39,7 @@
 @font-face {
   font-family: Muli;
   src: url("./assets/fonts/muli/Muli.ttf");
+  font-display: optional
 }
 
 body {
@@ -56,10 +57,39 @@ body {
   color: var(--danger)
 }
 
+.background-gradient { background-image: linear-gradient(to right, rgba(125, 29, 12, 1) 35%, rgba(12, 69, 124, 1)) }
+
+/*********************** section ******************/
 .card-from-step {
   padding: 0.875rem 0.625rem;
   border: 2px solid var(--danger);
   border-radius: 0.375rem;
 }
 
-.background-gradient { background-image: linear-gradient(to right, rgba(125, 29, 12, 1) 35%, rgba(12, 69, 124, 1)) }
+/*********************** Changes in slick buttons ******************/
+.slick-arrow {
+  margin: 1rem 0 !important;
+}
+.slick-prev:before {
+  font-family: "Material Symbols Outlined" !important;
+  content: "\e5cb" !important;
+  font-size: 1.875rem !important;
+  transform: translateX(0) translateY(50%);
+  border-radius: 100% !important;
+  padding: 0.5rem !important;
+  color: var(--white) !important;
+  background-color: var(--black-blue) !important;
+  margin: 4rem -2.5rem !important;
+}
+
+.slick-next:before {
+  font-family: "Material Symbols Outlined" !important;
+  content: "\e5cc" !important;
+  font-size: 1.875rem !important;
+  transform: translateX(0) translateY(50%);
+  border-radius: 100% !important;
+  padding: 0.5rem !important;
+  color: var(--white) !important;
+  background-color: var(--black-blue) !important;
+  margin: 4rem 0 !important;
+}

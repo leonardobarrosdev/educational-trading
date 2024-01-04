@@ -1,8 +1,17 @@
+'use client'
+
 import Image from 'next/image'
-import { TopNavbar } from './components/TopNavbar'
-import { HighlightButton } from './components/controllers/HighlightButton'
-import { Carousel } from '@trendyol-js/react-carousel'
-import { Item } from './components/Item'
+
+import { Header } from '../components/ux/Header'
+import { HighlightButton } from '../components/ui/HighlightButton'
+import Banner from '../components/ux/Banner'
+import SliderStick from "@/components/ux/SliderStick"
+
+type SelectionsContentProps = {
+  description: string;
+  image: any;
+  msg: string;
+}
 
 const sectionTwoContents = [
   {
@@ -55,34 +64,126 @@ const stepsForTransfer = [
   },
 ]
 
+const selectionsContent = [
+  {
+    description: "Image of Malta logo",
+    image: require("@images/sections/section5-selections/Malta.png"),
+    msg: "Malta"
+  },
+  {
+    description: "Image of Norway logo",
+    image: require("@images/sections/section5-selections/Norway.png"),
+    msg: "Norway"
+  },
+  {
+    description: "Image of Portugal logo",
+    image: require("@images/sections/section5-selections/Portugal.png"),
+    msg: "Portugal"
+  },
+  {
+    description: "Image of Slovakia logo",
+    image: require("@images/sections/section5-selections/Slovakia.png"),
+    msg: "Slovakia"
+  },
+  {
+    description: "Image of Spain logo",
+    image: require("@images/sections/section5-selections/Spain.png"),
+    msg: "Spain"
+  },
+  {
+    description: "Image of Sweden logo",
+    image: require("@images/sections/section5-selections/Sweden.png"),
+    msg: "Sweden"
+  },
+  {
+    description: "Image of Austria logo",
+    image: require("@images/sections/section5-selections/austria.png"),
+    msg: "Austria"
+  },
+  {
+    description: "Image of Belgium logo",
+    image: require("@images/sections/section5-selections/belgium.png"),
+    msg: "Belgium"
+  },
+  {
+    description: "Image of Cyprua logo",
+    image: require("@images/sections/section5-selections/cyprus.png"),
+    msg: "Cyprua"
+  },
+  {
+    description: "Image of Denmark logo",
+    image: require("@images/sections/section5-selections/denmark.png"),
+    msg: "Denmark"
+  },
+  {
+    description: "Image of Estonia logo",
+    image: require("@images/sections/section5-selections/estonia.png"),
+    msg: "Estonia"
+  },
+  {
+    description: "Image of Finland logo",
+    image: require("@images/sections/section5-selections/finland.png"),
+    msg: "Finland"
+  },
+  {
+    description: "Image of France logo",
+    image: require("@images/sections/section5-selections/france.png"),
+    msg: "France"
+  },
+  {
+    description: "Image of Greence logo",
+    image: require("@images/sections/section5-selections/greece.png"),
+    msg: "Greence"
+  },
+  {
+    description: "Image of Ireland logo",
+    image: require("@images/sections/section5-selections/ireland.png"),
+    msg: "Ireland"
+  },
+  {
+    description: "Image of Italy logo",
+    image: require("@images/sections/section5-selections/italy.png"),
+    msg: "Italy"
+  },
+  {
+    description: "Image of Luxembourg logo",
+    image: require("@images/sections/section5-selections/luxembourg.png"),
+    msg: "Luxembourg"
+  },
+  {
+    description: "Image of Netherlands logo",
+    image: require("@images/sections/section5-selections/netherlands.png"),
+    msg: "Netherlands"
+  },
+  {
+    description: "Image of Slovinia logo",
+    image: require("@images/sections/section5-selections/slovinia.png"),
+    msg: "Slovinia"
+  },
+]
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <header className="z-10 w-full items-center">
-        <TopNavbar />
-        <Image
-          src={require("@images/sections/section1/point.jpg")}
-          alt="One hat clicked in a point of accesse"
-          className="w-full"
-        />
-      </header>
-      <section className="w-full bg-primary">
+      <Header />
+      <Banner />
+      <section className="w-full bg-primary" style={{marginTop: "-5px"}}>
         <div className="md:mx-auto max-w-7xl md:grid md:grid-cols-4 gap-x-4">
           {
             sectionTwoContents.map((content, index) => (
-              <div key={index} className="flex items-center justify-around bg-blackBlue md:h-32 rounded-md">
+              <div key={index} className="flex items-center justify-around bg-blackBlue py-7 rounded-md">
                 <Image
                   src={content.image}
                   alt={content.description}
                   className="px-1"
                 />
-                <h3 className="text-white font-medium">{content.msg}</h3>
+                <h3 className="text-white text-3xl font-medium">{content.msg}</h3>
               </div>
             ))
           }
         </div>
       </section>
-      <section className="md:h-svh md:w-full mt-16">
+      <section id="exchange-rater" className="md:h-svh md:w-full my-16">
         <div className="md:flex mx-auto max-w-7xl relative items-center md:justify-between">
           <article className="grid md:gap-y-10 font-normal text-left">
             <h2 className="text-blackBlue" style={{fontSize: "2.25rem"}}>
@@ -105,7 +206,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex w-full">
+      <section id="feacture" className="flex w-full">
         <Image
           src={require("@images/sections/section3.jpg")}
           alt=""
@@ -126,11 +227,11 @@ export default function Home() {
           </div>
         </article>
       </section>
-      <section className="md:my-20 w-full">
+      <section id="how-to-transfer" className="md:my-20 w-full">
         <div className="md:max-w-7xl mx-auto">
           <h3 className="text-4xl mb-3"><span className="text-highlight">transfer </span>in 5 easy steps</h3>
-          <hr className="text-danger font-bold w-2/5 rounded-md pb-5" />
-          <section className="flex flex-row gap-2 justify-stretch">
+          <hr className="text-danger font-bold w-2/5 rounded-md" />
+          <section className="flex flex-row gap-2 justify-stretch mt-10 mb-20">
             {
               stepsForTransfer.map((content, index) => (
                 <div key={index} className="card-from-step">
@@ -147,8 +248,8 @@ export default function Home() {
         </div>
       </section>
       <section className="md:py-20 w-full background-gradient">
-        <div className="md:max-w-7xl mx-auto text-center">
-          <div className="grid md:grid-cols-4 grid-cols-2">
+        <div className="md:max-w-7xl mx-auto text-center divide-y divide-blackBlue">
+          <div className="grid md:grid-cols-4 grid-cols-2  divide-x divide-blackBlue">
             <div className="py-2.5 px-6">
               <h3 className="text-white text-2xl">Available across 20 Eurozone countries</h3>
             </div>
@@ -162,7 +263,7 @@ export default function Home() {
               <h3 className="text-white text-2xl">Fast and secure transfers</h3>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center  divide-x divide-blackBlue">
             <div className="w-64 py-2.5 px-6">
               <h3 className="text-white text-2xl">Lock your exchange rates</h3>
             </div>
@@ -176,11 +277,60 @@ export default function Home() {
         </div>
       </section>
       <section className="my-20 w-full">
-        <h2 className="text-center text-4xl text-blackBlue">Available across 20 countries</h2>
-        {/* <Carousel show={3.5} slide={2} transition={0.5}>
-          <Item />
-        </Carousel> */}
+        <h2 className="text-center text-4xl text-blackBlue mb-16">Available across {selectionsContent.length} countries</h2>
+        <SliderStick />
       </section>
+      <section id="contact-us" className="w-full py-14 px-1 bg-[url('./assets/images/sections/contactbg.jpg')] bg-no-repeat">
+        <h2 className="text-center text-4xl text-white">Get in touch</h2>
+        <div className="mx-auto flex items-center justify-center py-20">
+          <div className="flex flex-col w-1/3 relative">
+            <Image
+              src={require("@images/contacts/contact-phone.svg")}
+              alt="Illustration of phone"
+              className="mx-auto"
+            />
+            <ul className="text-white text-center text-2xl">
+              <li>India: +91 407100 4532</li>
+              <li>Europe: 00 800 4499 6532</li>
+            </ul>
+          </div>
+          <div className="flex flex-col w-1/3 relative">
+            <Image
+              src={require("@images/contacts/contact-email.svg")}
+              alt="Illustration of email"
+              className="mx-auto"
+            />
+            <a className="text-white text-center text-2xl" href="#">europe@company.com</a>
+          </div>
+        </div>
+      </section>
+      <section className="w-full h-40 flex flex-col items-center justify-center">
+        <h4 className="text-blackBlue text-md">Download MoneyCompany app</h4>
+        <div className="flex justify-center gap-2 mt-2">
+          <Image
+            src={require("@images/sections/googleplay.png")}
+            alt="Google Play Image"
+          />
+          <Image
+            src={require("@images/sections/appstore.png")}
+            alt="App Store Image"
+          />
+        </div>
+      </section>
+      <footer className="w-full">
+        <div className="w-1/2 mx-auto">
+          <ul className="flex items-center justify-center divide-x divide-blackBlue border-y-2 relative animate-fade delay-250">
+            <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab1" target="_blank">Imprint</a></li>
+            <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab2" target="_blank">User Identification</a></li>
+            <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab3" target="_blank">Privacy Policy</a></li>
+            <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab4" target="_blank">Terms of Use</a></li>
+            <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab5" target="_blank">Online Security</a></li>
+            <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab6" target="_blank">Holiday List</a></li>
+            <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab7" target="_blank">About US</a></li>
+          </ul>
+        </div>
+        <p className="text-center text-blckBlue my-3">Copyright©2020. All rights Reserved.</p>
+      </footer>
     </main>
   )
 }
