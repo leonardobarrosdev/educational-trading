@@ -1,9 +1,9 @@
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Transfer Money',
-  description: 'Transfer Money to India from Europe Pnline - Send...',
+  description: 'Transfer Money to India from Europe Online - Send...',
 }
 
 export default function RootLayout({
@@ -17,7 +17,6 @@ export default function RootLayout({
       <link
         rel="stylesheet"
         type="text/css"
-        // charset="UTF-8"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
       />
       <link

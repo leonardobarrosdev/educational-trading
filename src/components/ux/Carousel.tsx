@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from "react";
 import { setInterval, clearInterval } from "timers";
 import Image from "next/image"

@@ -1,11 +1,16 @@
-'use client'
+"use client"
 
+import { Suspense } from 'react'
 import Image from 'next/image'
+import { useState } from 'react'
+import { useRouter } from "next/navigation"
+import 'material-symbols'
 
-import { Header } from '../components/ux/Header'
-import { HighlightButton } from '../components/ui/HighlightButton'
-import Banner from '../components/ux/Banner'
-import SliderStick from "@/components/ux/SliderStick"
+import Banner from '@components/ux/Banner'
+import SliderStick from "@components/ux/SliderStick"
+import { Button } from '@components/ui/Button'
+import { HighlightButton } from '@components/ui/HighlightButton'
+import Loading from '@components/ui/loading'
 
 type SelectionsContentProps = {
   description: string;
@@ -163,9 +168,48 @@ const selectionsContent = [
 ]
 
 export default function Home() {
+  const router = useRouter()
+  let [open, setOpen] = useState(false)
+  let sectionLinks = [
+    {name: "HOME", link: "#home"},
+    {name: "EXCHANGE RATER", link: "#exchange-rater"},
+    {name: "FEATURE", link: "#feacture"},
+    {name: "HOW TO TRANSFER", link: "#how-to-transfer"},
+    {name: "CONTACT US", link: "#contact-us"},
+    {name: "FAQs", link: "#"}
+  ]
+
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <Header />
+    <main className="min-h-screen flex flex-col items-center">
+      <header id="home" className="z-10 w-full items-center relative">
+        <div className="md:fixed md:min-w-full bg-white">
+          <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+            <nav className="relative z-50 flex justify-between">
+              <div className="flex items-center lg:gap-x-24">
+                <>
+                <h1 className="text-xxl weight-400 font-normal">Brand</h1>
+                </>
+                <ul className="hidden md:flex">
+                  {
+                    sectionLinks.map((link) => (
+                      <li key={link.name} className="md:py-8">
+                        <a href={link.link} className="md:py-8 md:px-4 hover:bg-danger hover:text-[white]">{link.name}</a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+              <div className="flex items-center gap-x-2 md:gap-x-3">
+                <Button type="button" title="SIGN UP" onClick={() => router.push("/auth/register")} />
+                <Button type="button" title="LOGIN" onClick={() => router.push("/auth/login")} />
+                <div className="-mr-1 md:hidden">
+                  <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
       <Banner />
       <section className="w-full bg-primary" style={{marginTop: "-5px"}}>
         <div className="md:mx-auto max-w-7xl md:grid md:grid-cols-4 gap-x-4">
@@ -208,8 +252,8 @@ export default function Home() {
       </section>
       <section id="feacture" className="flex w-full">
         <Image
-          src={require("@images/sections/section3.jpg")}
-          alt=""
+          src={require("@images/sections/feature.jpg")}
+          alt="The image depicts an aerial view of a city at night with illuminated buildings and city lights. It includes outdoor elements such as trees and a river, and the sky shows a sunset with clouds."
           className="w-1/2"
         />
         <article className="w-1/2 flex items-center bg-blackBlue text-white">
@@ -227,26 +271,28 @@ export default function Home() {
           </div>
         </article>
       </section>
-      <section id="how-to-transfer" className="md:my-20 w-full">
-        <div className="md:max-w-7xl mx-auto">
-          <h3 className="text-4xl mb-3"><span className="text-highlight">transfer </span>in 5 easy steps</h3>
-          <hr className="text-danger font-bold w-2/5 rounded-md" />
-          <section className="flex flex-row gap-2 justify-stretch mt-10 mb-20">
-            {
-              stepsForTransfer.map((content, index) => (
-                <div key={index} className="card-from-step">
-                  <Image
-                    src={content.image}
-                    alt={content.description}
-                    className="mx-auto"
-                  />
-                  <h4 className="text-danger text-center text-2xl px-2.5 mt-4 mb-8">{content.msg}</h4>
-                </div>
-              ))
-            }
-          </section>
-        </div>
-      </section>
+        <section id="how-to-transfer" className="md:my-20 w-full">
+          <div className="md:max-w-7xl mx-auto">
+            <h3 className="text-4xl mb-3"><span className="text-highlight">transfer </span>in 5 easy steps</h3>
+            <hr className="text-danger font-bold w-2/5 rounded-md" />
+            <Suspense fallback={<Loading />}>
+              <section className="flex flex-row gap-2 justify-stretch mt-10 mb-20">
+                {
+                  stepsForTransfer.map((content, index) => (
+                    <div key={index} className="card-from-step">
+                      <Image
+                        src={content.image}
+                        alt={content.description}
+                        className="mx-auto"
+                      />
+                      <h4 className="text-danger text-center text-2xl px-2.5 mt-4 mb-8">{content.msg}</h4>
+                    </div>
+                  ))
+                }
+              </section>
+            </Suspense>
+          </div>
+        </section>
       <section className="md:py-20 w-full background-gradient">
         <div className="md:max-w-7xl mx-auto text-center divide-y divide-blackBlue">
           <div className="grid md:grid-cols-4 grid-cols-2  divide-x divide-blackBlue">
@@ -278,9 +324,12 @@ export default function Home() {
       </section>
       <section className="my-20 w-full">
         <h2 className="text-center text-4xl text-blackBlue mb-16">Available across {selectionsContent.length} countries</h2>
-        <SliderStick />
+        <Suspense fallback={<Loading />}>
+          <SliderStick />
+        </Suspense>
       </section>
-      <section id="contact-us" className="w-full py-14 px-1 bg-[url('./assets/images/sections/contactbg.jpg')] bg-no-repeat">
+      <Suspense fallback={<Loading />}>
+      <section id="contact-us" className="w-full py-14 px-1 bg-[url('../assets/images/sections/contactbg.jpg')] bg-no-repeat">
         <h2 className="text-center text-4xl text-white">Get in touch</h2>
         <div className="mx-auto flex items-center justify-center py-20">
           <div className="flex flex-col w-1/3 relative">
@@ -304,18 +353,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </Suspense>
       <section className="w-full h-40 flex flex-col items-center justify-center">
-        <h4 className="text-blackBlue text-md">Download MoneyCompany app</h4>
-        <div className="flex justify-center gap-2 mt-2">
-          <Image
-            src={require("@images/sections/googleplay.png")}
-            alt="Google Play Image"
-          />
-          <Image
-            src={require("@images/sections/appstore.png")}
-            alt="App Store Image"
-          />
-        </div>
+        <Suspense fallback={<Loading />}>
+          <h4 className="text-blackBlue text-md">Download MoneyCompany app</h4>
+          <div className="flex justify-center gap-2 mt-2">
+            <Image
+              src={require("@images/sections/googleplay.png")}
+              alt="Google Play Image"
+            />
+            <Image
+              src={require("@images/sections/appstore.png")}
+              alt="App Store Image"
+            />
+          </div>
+        </Suspense>
       </section>
       <footer className="w-full">
         <div className="w-1/2 mx-auto">

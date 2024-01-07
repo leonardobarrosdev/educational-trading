@@ -1,3 +1,5 @@
+'use client'
+
 import { Component } from "react"
 import Image from "next/image"
 import Slider from "react-slick"
@@ -36,7 +38,7 @@ const slides = [
 export default class Banner extends Component {
   render() {
     const settings = {
-      className: "w-full mt-20",
+      className: "w-full mt-20 mb-0",
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
