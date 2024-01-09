@@ -1,7 +1,9 @@
 import { ButtonHTMLAttributes } from "react"
 
 export type ButtonProps = ButtonHTMLAttributes<T> & {
-  title: string
+  title: string,
+  bgColor?: string,
+  className?: string
 }
 
 export type ButtonIconProps = ButtonHTMLAttributes<T> & {
