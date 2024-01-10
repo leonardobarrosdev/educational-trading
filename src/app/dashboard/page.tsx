@@ -58,26 +58,26 @@ export default function Dashboard() {
             </Card>
           </div>
           <div className="grid col-span-2">
-            <CardTop title="ASSETS" titleIcon="" removeIcon={true} />
+            <CardTop title="ASSETS" titleIcon="analytics" removeIcon={true} />
             <Card>
               <div>
                 <ul className="grid gap-y-3">
-                  <li>Account Balance<span>55XXX XX</span></li>
-                  <li>Demot<span>11XXX.XX</span></li>
-                  <li>Deposit<span>10000</span></li>
+                  <li className="font-semibold whitespace-break-spaces">Account Balance       <span className="font-normal text-end">55XXX XX</span></li>
+                  <li className="font-semibold whitespace-break-spaces">Demot                       <span className="font-normal">11XXX.XX</span></li>
+                  <li className="font-semibold whitespace-break-spaces">Deposit                     <span className="font-normal">10000</span></li>
                 </ul>
                 <Button title="MY PROFILE" className="mt-3"/>
               </div>
             </Card>
           </div>
           <div className="grid col-span-2">
-            <CardTop title="LIABILITIES" titleIcon="" removeIcon={true} />
+            <CardTop title="LIABILITIES" titleIcon="analytics" removeIcon={true} />
             <Card>
               <div>
                 <ul className="grid gap-y-3">
-                  <li>Credi Cards<span>55XXX XX</span></li>
-                  <li>Loans<span>11XXX.XX</span></li>
-                  <li>Insurance<span>12000 00</span></li>
+                  <li className="font-semibold whitespace-break-spaces">Credi Cards            <span className="font-normal">55XXX XX</span></li>
+                  <li className="font-semibold whitespace-break-spaces">Loans                     <span className="font-normal">11XXX.XX</span></li>
+                  <li className="font-semibold whitespace-break-spaces">Insurance               <span className="font-normal">12000 00</span></li>
                 </ul>
                 <Button title="LINK MY ACCOUNT" className="mt-3"/>
               </div>
@@ -88,7 +88,7 @@ export default function Dashboard() {
             <Calendar />
           </div>
           <div className="grid col-span-2">
-            <CardTop title="REWORDS" titleIcon="" removeIcon={true} closeIcon={true} />
+            <CardTop title="REWORDS" titleIcon="featured_seasonal_and_gifts" removeIcon={true} closeIcon={true} />
             <Card>
               <div>
                 <Image
@@ -102,7 +102,7 @@ export default function Dashboard() {
             </Card>
           </div>
           <div className="grid col-span-2">
-            <CardTop title="LIABILITIES" titleIcon="" removeIcon={true} closeIcon={true} />
+            <CardTop title="LIABILITIES" titleIcon="blur_off" removeIcon={true} closeIcon={true} />
             <Card>
               <div className="mt-o">
                 <Image

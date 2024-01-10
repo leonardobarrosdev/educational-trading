@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="w-full items-center">
       <div className="md:min-w-full bg-white">
-        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
           <nav className="relative z-50 flex justify-between">
             <div className="flex items-center md:gap-x-12 py-4">
               <h1 className="text-xxl weight-400 font-normal">Brand</h1>

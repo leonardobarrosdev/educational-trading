@@ -92,3 +92,13 @@ body {
   background-color: var(--black-blue) !important;
   margin: 4rem 0 !important;
 }
+
+/*********************** Mateial Symbols ******************/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: var(--primary)
+}

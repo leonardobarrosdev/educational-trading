@@ -45,6 +45,7 @@ export default class Banner extends Component {
       initialSlide: 0,
       autoplay: true,
       speed: 500,
+      arrows: false,
     }
   
     return (

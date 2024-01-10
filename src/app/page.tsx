@@ -178,8 +178,8 @@ export default function Home() {
                 </ul>
               </div>
               <div className="flex items-center gap-x-2 md:gap-x-3">
-                <Button type="button" title="SIGN UP" onClick={() => router.push("/auth/register")} />
-                <Button type="button" title="LOGIN" onClick={() => router.push("/auth/login")} />
+                <Button type="button" title="SIGN UP" onClick={() => router.push("/register")} />
+                <Button type="button" title="LOGIN" onClick={() => router.push("/login")} />
                 <div className="-mr-1 md:hidden">
                   <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>
                 </div>

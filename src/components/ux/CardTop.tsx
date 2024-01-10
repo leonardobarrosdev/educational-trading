@@ -7,7 +7,7 @@ export function CardTop({title, ...props}: CardTopProps) {
       <div className="flex items-center justify-between px-2 py-2">
         <div className="flex items-center gap-2 text-md">
           <span className="material-symbols-outlined">{props.titleIcon}</span>
-          <h2 className="text-md">{title}</h2>
+          <h2 className="text-md font-bold text-blackBlue">{title}</h2>
         </div>
         <div className="flex">
           <span className="material-symbols-outlined">{props.removeIcon ? "remove" : ""}</span>
