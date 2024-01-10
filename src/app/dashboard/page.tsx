@@ -1,7 +1,4 @@
-"use client"
-
 import Image from "next/image"
-import { usePathname } from "next/navigation"
 
 import Header from "@components/ux/Header"
 import TopNavBar from "@components/ux/TopNavBar"
@@ -9,9 +6,10 @@ import Card from "@components/ux/Card"
 import { Button } from "@components/ui/Button"
 import { CardTop } from "@/components/ux/CardTop"
 import { Calendar } from "@components/ux/Calendar"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
 export default function Dashboard() {
-  const asPath = usePathname().split("/").slice(-1)
+  const asPath = Breadcrumb()
 
   return (
     <main className="flex min-h-screen flex-col items-center">
