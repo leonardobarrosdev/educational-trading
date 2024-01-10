@@ -11,35 +11,13 @@ import SliderStick from "@components/ux/SliderStick"
 import { Button } from '@components/ui/Button'
 import { HighlightButton } from '@components/ui/HighlightButton'
 import Loading from '@components/ui/loading'
+import CustomService from '@/components/ux/CustomService'
 
 type SelectionsContentProps = {
   description: string;
   image: any;
   msg: string;
 }
-
-const sectionTwoContents = [
-  {
-    description: "Image of clock and blocks representing transfers",
-    image: require("@images/sections/section2/1-transfer-min.svg"),
-    msg: "Transfer in under 30 mins to India**"
-  },
-  {
-    description: "Image of eclipse with two sets representing movimentation",
-    image: require("@images/sections/section2/2-transfer-move.svg"),
-    msg: "Transfers on the move"
-  },
-  {
-    description: "Image of glob show assured exchange rates",
-    image: require("@images/sections/section2/3-exchange-rates.svg"),
-    msg: "Assured Exchange Rates"
-  },
-  {
-    description: "Image show circle verified change",
-    image: require("@images/sections/section2/4-minimal-change.svg"),
-    msg: "Minimal Change"
-  },
-]
 
 const stepsForTransfer = [
   {
@@ -211,20 +189,9 @@ export default function Home() {
         </div>
       </header>
       <Banner />
-      <section className="w-full bg-primary" style={{marginTop: "-5px"}}>
-        <div className="md:mx-auto max-w-7xl md:grid md:grid-cols-4 gap-x-4">
-          {
-            sectionTwoContents.map((content, index) => (
-              <div key={index} className="flex items-center justify-around bg-blackBlue py-7 rounded-md">
-                <Image
-                  src={content.image}
-                  alt={content.description}
-                  className="px-1"
-                />
-                <h3 className="text-white text-3xl font-medium">{content.msg}</h3>
-              </div>
-            ))
-          }
+      <section className="w-full bg-primary mt-[-5px]">
+        <div className="md:mx-auto max-w-7xl">
+          <CustomService />
         </div>
       </section>
       <section id="exchange-rater" className="md:h-svh md:w-full my-16">

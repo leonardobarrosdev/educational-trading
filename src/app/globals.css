@@ -81,7 +81,6 @@ body {
   background-color: var(--black-blue) !important;
   margin: 4rem -2.5rem !important;
 }
-
 .slick-next:before {
   font-family: "Material Symbols Outlined" !important;
   content: "\e5cc" !important;
