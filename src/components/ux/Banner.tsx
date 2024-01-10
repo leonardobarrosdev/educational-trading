@@ -8,29 +8,29 @@ const slides = [
   {
     description: "",
     image: require("@images/sections/section1/banner1.jpg"),
-    msg: "Don’t let urgent fund\ntransfers wait",
-    subMsg: "Transfers on the move",
+    msg: <h1 className="text-[46px] text-danger">Don’t let urgent fund<br/>transfers wait</h1>,
+    subMsg: <p className="text-[32px] text-primary">Transfers on the move</p>,
     extraMsg: ""
   },
   {
     description: "",
     image: require("@images/sections/section1/banner2.jpg"),
-    msg: "Make the most of\nevery CENT",
-    subMsg: "Get the best exchange rates",
+    msg: <h1 className="text-[46px] text-white">Make the most of<br/>every CENT</h1>,
+    subMsg: <p className="text-[32px] text-warning">Get the best exchange rates</p>,
     extraMsg: ""
   },
   {
     description: "",
     image: require("@images/sections/section1/banner3.jpg"),
-    msg: "Enjoy quick &amp; safe\ntransfers",
-    subMsg: "Transfer in under 30 minutes\nto India**",
+    msg: <h1 className="text-[46px] text-danger">Enjoy quick &amp; safe<br/>transfers</h1>,
+    subMsg: <p className="text-[32px] text-blackBlue">Transfer in under 30 minutes<br/>to India**</p>,
     extraMsg: "**Any ICICI Bank account in India."
   },
   {
     description: "",
     image: require("@images/sections/section1/banner4.jpg"),
-    msg: "Save up on\ntransfer charges",
-    subMsg: "Complete fund transfers\nwith minimal charges",
+    msg: <h1 className="text-[46px] text-danger">Save up on<br/>transfer charges</h1>,
+    subMsg: <p className="text-[32px] text-blackBlue">Complete fund transfers<br/>with minimal charges</p>,
     extraMsg: ""
   },
 ]
@@ -57,10 +57,10 @@ export default class Banner extends Component {
                 alt={content.description}
                 className="z-0"
               />
-              <div className="absolute left-80 top-1/2 z-1 max-w-1/4">
-                <h1 className="text-[40px] text-blackBlue">{content.msg}</h1>
-                <p className="text-[32px] text-blackBlue">{content.subMsg}</p>
-                {content.extraMsg.length > 0 && <p className="text-blackBlue">{content.extraMsg}</p>}
+              <div className="absolute left-80 inset-y-1/3 z-1 max-w-1/4">
+                {content.msg}
+                {content.subMsg}
+                {content.extraMsg.length > 0 && <p className="text-blackBlue mt-16">{content.extraMsg}</p>}
               </div>
             </div>
           ))

@@ -9,8 +9,6 @@ import { Calendar } from "@components/ux/Calendar"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
 export default function Dashboard() {
-  const asPath = Breadcrumb()
-
   return (
     <main className="flex min-h-screen flex-col items-center">
       <Header />
@@ -27,11 +25,11 @@ export default function Dashboard() {
               <Button title="LOG OUT" bgColor="bg-blackBlue" />
               <Button title="MY PROFILE" />
             </div>
-            <p className="text-sm">Los visibled 24-15-2023 14:43:08 H</p>
+            <p className="text-[0.75rem]">Los visibled 24-15-2023 14:43:08 H</p>
           </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-md">{asPath}</p>
-            <hr className="px-2xl" />
+          <div className="w-4/5 flex flex-col gap-y-2">
+            <Breadcrumb />
+            <hr className="w-full text-2xl" />
           </div>
         </div>
         <section className="grid grid-cols-5 gap-4">
@@ -85,7 +83,7 @@ export default function Dashboard() {
               </div>
             </Card>
           </div>
-          <div className="">
+          <div>
             <CardTop title="LIABILITIES" titleIcon="" removeIcon={true} />
             <Calendar />
           </div>
@@ -106,7 +104,7 @@ export default function Dashboard() {
           <div className="grid col-span-2">
             <CardTop title="LIABILITIES" titleIcon="" removeIcon={true} closeIcon={true} />
             <Card>
-              <div>
+              <div className="mt-o">
                 <Image
                   src={require("@assets/images/dashboard/lamp.jpeg")}
                   alt="The image is of a gold statue on a pole with a sky background. It also includes outdoor elements such as trees and buildings."

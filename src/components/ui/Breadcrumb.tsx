@@ -3,5 +3,9 @@
 import { usePathname } from "next/navigation"
 
 export function Breadcrumb() {
-  return usePathname().split("/").slice(-1)
+  const asPath = usePathname().split("/").slice(-1)
+
+  return (
+    <p className="text-md">{asPath}</p>
+  )
 }

@@ -183,7 +183,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center">
       <header id="home" className="z-10 w-full items-center relative">
         <div className="md:fixed md:min-w-full bg-white">
-          <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl gap-x-4 md:gap-x-6 lg:gap-x-8">
             <nav className="relative z-50 flex justify-between">
               <div className="flex items-center lg:gap-x-24">
                 <>
