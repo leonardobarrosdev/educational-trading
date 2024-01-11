@@ -6,6 +6,6 @@ export function Breadcrumb() {
   const asPath = usePathname().split("/").slice(-1)
 
   return (
-    <p className="text-md">{asPath}</p>
+    <p className="text-md capitalize">{asPath}</p>
   )
 }

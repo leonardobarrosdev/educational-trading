@@ -22,18 +22,6 @@ export default function Header() {
                 <li className="md:text-center">
                   <a href="#" className="md:mx-3 md:my-0 my-3 hover:md:text-danger">Email Us</a>
                 </li>
-                <li className="md:text-center">
-                  <a href="#" className="md:mx-3 md:my-0 my-3 hover:md:text-danger">24H Customer Card</a>
-                </li>
-                <li className="md:text-center">
-                  <a href="#" className="md:mx-3 md:my-0 my-3 hover:md:text-danger">Find ATM/Branch</a>
-                </li>
-                <li className="md:text-center">
-                  <a href="#" className="md:mx-3 md:my-0 my-3 hover:md:text-danger md:mx-3">CONTACT US</a>
-                </li>
-                <li className="md:text-center">
-                  <a href="#" className="md:mx-3 md:my-0 my-3 hover:md:text-danger">FAQs</a>
-                </li>
               </ul>
               <div className="-mr-1 md:hidden">
                 <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>

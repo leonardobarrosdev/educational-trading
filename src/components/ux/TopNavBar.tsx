@@ -6,8 +6,6 @@ export default function TopNavBar() {
           <li className="font-bold text-white">OVERVIEW -</li>
           <li className="font-bold text-white">MY ACCOUNTS -</li>
           <li className="font-bold text-white">PAYMENTS TRANSFERS -</li>
-          <li className="font-bold text-white">INVESTIMENTS & INSURANCE -</li>
-          <li className="font-bold text-white">MANAGE MY MONEY -</li>
           <li className="font-bold text-white">CUSTOMER SERVICE -</li>
         </ul>
       </nav>

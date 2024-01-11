@@ -30,7 +30,7 @@ export default function LogIn() {
 
   function handleSubmit(event: any) {
     event.preventDefault()
-    alert(`Test with: ${userId}`)
+    alert(`Test: ${userId ? userId : "you need of the backend"}`)
   }
 
   return (
