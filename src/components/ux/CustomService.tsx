@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Component } from "react"
 import Slider from "react-slick"

@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import 'material-symbols'
 import './globals.css'
 
 export const metadata: Metadata = {

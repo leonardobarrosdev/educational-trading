@@ -1,9 +1,8 @@
-'use client'
+"use client"
 
 import { Component } from "react"
-import Image from "next/image";
+import Image from "next/image"
 import Slider from "react-slick"
-import "material-symbols"
 
 const selectionsContent = [
   {
@@ -170,8 +169,7 @@ export default class MultipleItems extends Component {
     
     return (
       <Slider {...settings}>
-        {
-          selectionsContent.map((content, index) => (
+        {selectionsContent.map((content, index) => (
             <div key={index} className="flex flex-col items-center">
               <Image
                 src={content.image}
@@ -179,8 +177,7 @@ export default class MultipleItems extends Component {
               />
               <h5 className="text-2xl">{content.msg}</h5>
             </div>
-          ))
-        }
+        ))}
       </Slider>
     );
   }

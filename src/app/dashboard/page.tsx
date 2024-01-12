@@ -5,8 +5,7 @@ import TopNavBar from "@components/ux/TopNavBar"
 import Card from "@components/ux/Card"
 import { Button } from "@components/ui/Button"
 import { CardTop } from "@/components/ux/CardTop"
-import { Calendar } from "@components/ux/Calendar"
-import { Breadcrumb } from "@/components/ui/Breadcrumb"
+import { Breadcrumb } from "@/components/ux/Breadcrumb"
 
 export default function Dashboard() {
   return (

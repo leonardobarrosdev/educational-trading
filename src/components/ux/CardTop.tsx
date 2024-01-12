@@ -1,4 +1,3 @@
-import "material-symbols"
 import { CardTopProps } from "@/@types/CardProps"
 
 export function CardTop({title, ...props}: CardTopProps) {

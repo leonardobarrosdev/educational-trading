@@ -1,17 +1,12 @@
-"use client"
-
 import { Suspense } from 'react'
 import Image from 'next/image'
-import { useState } from 'react'
-import { useRouter } from "next/navigation"
-import 'material-symbols'
 
 import Banner from '@components/ux/Banner'
 import SliderStick from "@components/ux/SliderStick"
-import { Button } from '@components/ui/Button'
 import { HighlightButton } from '@components/ui/HighlightButton'
 import Loading from '@components/ui/loading'
 import CustomService from '@/components/ux/CustomService'
+import NavBar from '@/components/ux/NavBar'
 
 type SelectionsContentProps = {
   description: string;
@@ -146,47 +141,10 @@ const selectionsContent = [
 ]
 
 export default function Home() {
-  const router = useRouter()
-  let [open, setOpen] = useState(false)
-  let sectionLinks = [
-    {name: "HOME", link: "#home"},
-    {name: "EXCHANGE RATER", link: "#exchange-rater"},
-    {name: "FEATURE", link: "#feacture"},
-    {name: "HOW TO TRANSFER", link: "#how-to-transfer"},
-    {name: "CONTACT US", link: "#contact-us"},
-    {name: "FAQs", link: "#"}
-  ]
-
   return (
     <main className="min-h-screen flex flex-col items-center">
-      <header id="home" className="z-10 w-full items-center relative">
-        <div className="md:fixed md:min-w-full bg-white">
-          <div className="mx-auto max-w-7xl gap-x-4 md:gap-x-6 lg:gap-x-8">
-            <nav className="relative z-50 flex justify-between">
-              <div className="flex items-center lg:gap-x-24">
-                <>
-                <h1 className="text-xxl weight-400 font-normal">Brand</h1>
-                </>
-                <ul className="hidden md:flex">
-                  {
-                    sectionLinks.map((link) => (
-                      <li key={link.name} className="md:py-8">
-                        <a href={link.link} className="md:py-8 md:px-4 hover:bg-danger hover:text-[white]">{link.name}</a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-              <div className="flex items-center gap-x-2 md:gap-x-3">
-                <Button type="button" title="SIGN UP" onClick={() => router.push("/register")} />
-                <Button type="button" title="LOGIN" onClick={() => router.push("/login")} />
-                <div className="-mr-1 md:hidden">
-                  <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </div>
+      <header id="home" className="w-full z-50 md:fixed md:h-20 h-16 flex items-center bg-white">
+        <NavBar />
       </header>
       <Banner />
       <section className="w-full bg-primary mt-[-5px]">

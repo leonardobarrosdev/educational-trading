@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import 'material-symbols'
 
 export default function Header() {
   let [open, setOpen] = useState(false)

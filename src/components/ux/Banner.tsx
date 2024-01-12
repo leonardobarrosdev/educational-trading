@@ -38,7 +38,7 @@ const slides = [
 export default class Banner extends Component {
   render() {
     const settings = {
-      className: "w-full mt-20 mb-0",
+      className: "w-full relative md:mt-20",
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -50,8 +50,7 @@ export default class Banner extends Component {
   
     return (
       <Slider {...settings}>
-        {
-          slides.map((content, index) => (
+        {slides.map((content, index) => (
             <div key={index} className="relative">
               <Image
                 src={content.image}
@@ -64,8 +63,7 @@ export default class Banner extends Component {
                 {content.extraMsg.length > 0 && <p className="text-blackBlue mt-16">{content.extraMsg}</p>}
               </div>
             </div>
-          ))
-        }
+        ))}
       </Slider>
     )
   }
