@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Metadata } from "next"
 
 import Header from "@/components/ux/Header"
 import TopNavBar from "@/components/ux/TopNavBar"
@@ -9,17 +8,6 @@ import Card from "@/components/ux/Card"
 import { CardTop } from "@components/ux/CardTop"
 import { Button } from "@components/ui/Button"
 import { Input } from "@/components/ui/Input"
-
-type EventProps = {
-  userId: string,
-  password: string,
-  startIn: string
-}
-
-export const metadata: Metadata = {
-  title: "Log In",
-  description: "Login page"
-}
 
 export default function LogIn() {
   const [userId, setUserId] = useState("")
