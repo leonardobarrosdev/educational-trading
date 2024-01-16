@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import Image from 'next/image'
 
+import "@assets/styles/landingpage.css"
 import Banner from '@components/ux/Banner'
 import SliderStick from "@components/ux/SliderStick"
 import { HighlightButton } from '@components/ui/HighlightButton'

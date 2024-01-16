@@ -1,0 +1,82 @@
+/*********************** Cards ******************/
+.card-from-step {
+  padding: 0.875rem 0.625rem;
+  border: 2px solid var(--danger);
+  border-radius: 0.375rem;
+}
+
+/*********************** Changes in slick buttons ******************/
+.slick-arrow {
+  margin: 1rem 0 !important;
+}
+.slick-prev:before {
+  font-family: "Material Symbols Outlined" !important;
+  content: "\e5cb" !important;
+  font-size: 1.875rem !important;
+  transform: translateX(0) translateY(50%);
+  border-radius: 100% !important;
+  padding: 0.5rem !important;
+  color: var(--white) !important;
+  background-color: var(--black-blue) !important;
+  margin: 4rem -2.5rem !important;
+}
+.slick-next:before {
+  font-family: "Material Symbols Outlined" !important;
+  content: "\e5cc" !important;
+  font-size: 1.875rem !important;
+  transform: translateX(0) translateY(50%);
+  border-radius: 100% !important;
+  padding: 0.5rem !important;
+  color: var(--white) !important;
+  background-color: var(--black-blue) !important;
+  margin: 4rem 0 !important;
+}
+
+/*********************** ul diamon list customized ******************/
+ul.diamond-list-style > li {
+  padding-left: 1.5rem;
+  position: relative;
+  &:after {
+    content: '';
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: var(--white);
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 1rem;
+    left: 0;
+  }
+}
+@media only screen and (max-width: 640px) {
+  ul.diamond-list-style > li {
+    padding-left: 1.5rem;
+    position: relative;
+    &:after {
+      content: '';
+      height: 0.7rem;
+      width: 0.7rem;
+      background-color: var(--white);
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      top: 0.1rem !important
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  ul.diamond-list-style > li {
+    padding-left: 1.5rem;
+    position: relative;
+    &:after {
+      content: '';
+      height: 0.7rem;
+      width: 0.7rem;
+      background-color: var(--white);
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      top: 0.5rem !important
+    }
+  }
+}

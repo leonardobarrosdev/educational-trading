@@ -58,40 +58,6 @@ body {
 
 .background-gradient { background-image: linear-gradient(to right, rgba(125, 29, 12, 1) 35%, rgba(12, 69, 124, 1)) }
 
-/*********************** Cards ******************/
-.card-from-step {
-  padding: 0.875rem 0.625rem;
-  border: 2px solid var(--danger);
-  border-radius: 0.375rem;
-}
-
-/*********************** Changes in slick buttons ******************/
-.slick-arrow {
-  margin: 1rem 0 !important;
-}
-.slick-prev:before {
-  font-family: "Material Symbols Outlined" !important;
-  content: "\e5cb" !important;
-  font-size: 1.875rem !important;
-  transform: translateX(0) translateY(50%);
-  border-radius: 100% !important;
-  padding: 0.5rem !important;
-  color: var(--white) !important;
-  background-color: var(--black-blue) !important;
-  margin: 4rem -2.5rem !important;
-}
-.slick-next:before {
-  font-family: "Material Symbols Outlined" !important;
-  content: "\e5cc" !important;
-  font-size: 1.875rem !important;
-  transform: translateX(0) translateY(50%);
-  border-radius: 100% !important;
-  padding: 0.5rem !important;
-  color: var(--white) !important;
-  background-color: var(--black-blue) !important;
-  margin: 4rem 0 !important;
-}
-
 /*********************** Mateial Symbols ******************/
 .material-symbols-outlined {
   font-variation-settings:
@@ -100,21 +66,4 @@ body {
   'GRAD' 0,
   'opsz' 24;
   color: var(--primary)
-}
-
-/*********************** ul diamon list customized ******************/
-ul.diamond-list-style > li {
-  padding-left: 1.5rem;
-  position: relative;
-  &:after {
-    content: '';
-    height: 0.4em;
-    width: 0.4em;
-    background-color: var(--white);
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    top: 0.25rem;
-    left: 0;
-  }
 }
