@@ -1,6 +1,5 @@
 "use client" 
 
-import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Dropdown } from 'flowbite-react'
 
@@ -8,7 +7,6 @@ import { Button } from "../ui/Button"
 
 export default function NavBar() {
   const router = useRouter()
-  let [open, setOpen] = useState(false)
   let navLinks = [
     {name: "HOME", link: "#home"},
     {name: "EXCHANGE RATER", link: "#exchange-rater"},
@@ -22,7 +20,7 @@ export default function NavBar() {
     <nav className="mx-auto md:max-w-7xl w-11/12 relative">
       <div className="flex items-center justify-between gap-x-4 lg:gap-x-6">
         <div className="flex items-center lg:gap-x-24">
-          <h1 className="text-xl md:text-2xl weight-400 font-normal">Brand</h1>
+          <h1 className="text-xl md:text-2xl weight-400 font-semibold">Brand</h1>
           <ul className="lg:flex hidden">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -39,7 +37,7 @@ export default function NavBar() {
               label=""
               size="md"
               dismissOnClick={false}
-              renderTrigger={() => <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>}
+              renderTrigger={() => <span className="material-symbols-outlined text-3xl">menu</span>}
             >
               {navLinks.map((link) => (
                 <Dropdown.Item key={link.link}><a href={link.link}>{link.name}</a></Dropdown.Item>
