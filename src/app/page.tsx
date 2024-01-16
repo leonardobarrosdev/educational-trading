@@ -8,12 +8,6 @@ import Loading from '@components/ui/loading'
 import CustomService from '@/components/ux/CustomService'
 import NavBar from '@/components/ux/NavBar'
 
-type SelectionsContentProps = {
-  description: string;
-  image: any;
-  msg: string;
-}
-
 const stepsForTransfer = [
   {
     description: "Illustration of a cell phone with a verified symbol and a hand pressing when clicking",
@@ -42,108 +36,10 @@ const stepsForTransfer = [
   },
 ]
 
-const selectionsContent = [
-  {
-    description: "Image of Malta logo",
-    image: require("@images/sections/section5-selections/Malta.png"),
-    msg: "Malta"
-  },
-  {
-    description: "Image of Norway logo",
-    image: require("@images/sections/section5-selections/Norway.png"),
-    msg: "Norway"
-  },
-  {
-    description: "Image of Portugal logo",
-    image: require("@images/sections/section5-selections/Portugal.png"),
-    msg: "Portugal"
-  },
-  {
-    description: "Image of Slovakia logo",
-    image: require("@images/sections/section5-selections/Slovakia.png"),
-    msg: "Slovakia"
-  },
-  {
-    description: "Image of Spain logo",
-    image: require("@images/sections/section5-selections/Spain.png"),
-    msg: "Spain"
-  },
-  {
-    description: "Image of Sweden logo",
-    image: require("@images/sections/section5-selections/Sweden.png"),
-    msg: "Sweden"
-  },
-  {
-    description: "Image of Austria logo",
-    image: require("@images/sections/section5-selections/austria.png"),
-    msg: "Austria"
-  },
-  {
-    description: "Image of Belgium logo",
-    image: require("@images/sections/section5-selections/belgium.png"),
-    msg: "Belgium"
-  },
-  {
-    description: "Image of Cyprua logo",
-    image: require("@images/sections/section5-selections/cyprus.png"),
-    msg: "Cyprua"
-  },
-  {
-    description: "Image of Denmark logo",
-    image: require("@images/sections/section5-selections/denmark.png"),
-    msg: "Denmark"
-  },
-  {
-    description: "Image of Estonia logo",
-    image: require("@images/sections/section5-selections/estonia.png"),
-    msg: "Estonia"
-  },
-  {
-    description: "Image of Finland logo",
-    image: require("@images/sections/section5-selections/finland.png"),
-    msg: "Finland"
-  },
-  {
-    description: "Image of France logo",
-    image: require("@images/sections/section5-selections/france.png"),
-    msg: "France"
-  },
-  {
-    description: "Image of Greence logo",
-    image: require("@images/sections/section5-selections/greece.png"),
-    msg: "Greence"
-  },
-  {
-    description: "Image of Ireland logo",
-    image: require("@images/sections/section5-selections/ireland.png"),
-    msg: "Ireland"
-  },
-  {
-    description: "Image of Italy logo",
-    image: require("@images/sections/section5-selections/italy.png"),
-    msg: "Italy"
-  },
-  {
-    description: "Image of Luxembourg logo",
-    image: require("@images/sections/section5-selections/luxembourg.png"),
-    msg: "Luxembourg"
-  },
-  {
-    description: "Image of Netherlands logo",
-    image: require("@images/sections/section5-selections/netherlands.png"),
-    msg: "Netherlands"
-  },
-  {
-    description: "Image of Slovinia logo",
-    image: require("@images/sections/section5-selections/slovinia.png"),
-    msg: "Slovinia"
-  },
-]
-
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center">
-      <header id="home" className="w-full z-50 md:fixed md:h-20 h-16 flex items-center bg-white">
+    <main id="home" className="min-h-screen flex flex-col items-center">
+      <header className="w-full z-50 md:fixed md:h-20 h-16 flex items-center bg-white">
         <NavBar />
       </header>
       <Banner />
@@ -152,16 +48,16 @@ export default function Home() {
           <CustomService />
         </div>
       </section>
-      <section id="exchange-rater" className="md:h-svh md:w-full my-16">
-        <div className="md:flex mx-auto max-w-7xl relative items-center md:justify-between">
-          <article className="grid md:gap-y-10 font-normal text-left">
-            <h2 className="text-blackBlue" style={{fontSize: "2.25rem"}}>
+      <section id="exchange-rater" className="md:w-full my-6 md:my-16">
+        <div className="lg:max-w-7xl mx-3 lg:mx-auto relative flex flex-col-reverse md:flex-row items-center justify-around lg:justify-between">
+          <article className="grid  gap-y-3 md:gap-y-10 font-normal text-left">
+            <h2 className="text-[1.25rem] md:text-[1.875rem] lg:text-[2.25rem] leading-[120%] tracking-light text-blackBlue">
               A <span className="text-highlight">CONVENIENT</span>, <span className="text-highlight">TRUSTED </span>
               and <span className="text-highlight">ECONOMICAL</span> money
               transfer service
             </h2>
             <hr className="text-danger font-bold w-auto rounded-md" />
-            <div className="text-blackBlue md:text-xl text-base leading-6 grid md:gap-y-10">
+            <div className="text-base md:text-lg lg:text-2xl text-blackBlue grid md:gap-y-10">
               <p>Company Europe is an online money transfer service by ICICI Bank Germany.</p>
               <p>We offer quick fund transfers from Europe to any bank account in India.</p>
             </div>
@@ -172,83 +68,81 @@ export default function Home() {
           <Image
             src={require("@images/sections/section2-ellipse.jpg")}
             alt="Image with two formal persons point at cell phone, one of them is holding the cell phone"
+            className="w-3/4 md:w-4/5 lg:w-full relative mb-3 md:mb-auto"
           />
         </div>
       </section>
-      <section id="feacture" className="flex w-full">
+      <section id="feacture" className="w-full flex flex-col md:flex-row">
         <Image
           src={require("@images/sections/feature.jpg")}
           alt="The image depicts an aerial view of a city at night with illuminated buildings and city lights. It includes outdoor elements such as trees and a river, and the sky shows a sunset with clouds."
-          className="w-1/2"
+          className="w-full md:w-1/2"
         />
-        <article className="w-1/2 flex items-center bg-blackBlue text-white">
-          <div className="md:px-8">
-            <h3 className="text-4xl mb-3">Why Company Europe?</h3>
-            <hr className="text-white font-bold w-3/4 rounded-md pb-5" />
-            <ul className="diamond-style text-2xl grid gap-2.5">
-              <li>Lock your exchange rates</li>
-              <li>Get more value for your money</li>
-              <li>Minimal charges with no hidden costs</li>
-              <li>Transfer to any bank in India</li>
-              <li>Transfer in under 30 minutes toICICI Bank accounts</li>
-              <li>Convenient and light mobile app</li>
+        <article className="w-full md:w-1/2 flex items-center bg-blackBlue text-white max-sm:py-3">
+          <div className="max-md:m-3 mx-auto md:px-8">
+            <h3 className="text-xl lg:text-4xl mb-3">Why Company Europe?</h3>
+            <hr className="text-white font-bold md:w-2/3 lg:w-3/4 pb-5" />
+            <ul className="diamond-list-style grid gap-2 md:gap-2.5">
+              <li className="text-base md:text-lg lg:text-2xl">Lock your exchange rates</li>
+              <li className="text-base md:text-lg lg:text-2xl">Get more value for your money</li>
+              <li className="text-base md:text-lg lg:text-2xl">Minimal charges with no hidden costs</li>
+              <li className="text-base md:text-lg lg:text-2xl">Transfer to any bank in India</li>
+              <li className="text-base md:text-lg lg:text-2xl">Transfer in under 30 minutes toICICI Bank accounts</li>
+              <li className="text-base md:text-lg lg:text-2xl">Convenient and light mobile app</li>
             </ul>
           </div>
         </article>
       </section>
-        <section id="how-to-transfer" className="md:my-20 w-full">
-          <div className="md:max-w-7xl mx-auto">
-            <h3 className="text-4xl mb-3"><span className="text-highlight">transfer </span>in 5 easy steps</h3>
-            <hr className="text-danger font-bold w-2/5 rounded-md" />
+        <section id="how-to-transfer" className="my-8 md:my-20 w-full">
+          <div className="mx-3 lg:max-w-7xl lg:mx-auto">
+            <h3 className="text-lg md:text-2xl lg:text-4xl leading-[120%] mb-3"><span className="text-highlight">transfer </span>in 5 easy steps</h3>
+            <hr className="text-danger font-bold w-10/12 md:w-1/2 lg:w-2/5 rounded-md" />
             <Suspense fallback={<Loading />}>
-              <section className="flex flex-row gap-2 justify-stretch mt-10 mb-20">
-                {
-                  stepsForTransfer.map((content, index) => (
-                    <div key={index} className="card-from-step">
-                      <Image
-                        src={content.image}
-                        alt={content.description}
-                        className="mx-auto"
-                      />
-                      <h4 className="text-danger text-center text-2xl px-2.5 mt-4 mb-8">{content.msg}</h4>
-                    </div>
-                  ))
-                }
+              <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-10 mb-20">
+                {stepsForTransfer.map((content, index) => (
+                  <div key={index} className="card-from-step">
+                    <Image
+                      src={content.image}
+                      alt={content.description}
+                      className="mx-auto"
+                    />
+                    <h4 className="text-lg md:text-xl lg:text-2xl text-center text-danger leading-[120%] px-2.5 mt-4 mb-8">{content.msg}</h4>
+                  </div>
+                ))}
               </section>
             </Suspense>
           </div>
         </section>
       <section className="md:py-20 w-full background-gradient">
-        <div className="md:max-w-7xl mx-auto text-center divide-y divide-blackBlue">
-          <div className="grid md:grid-cols-4 grid-cols-2  divide-x divide-blackBlue">
+        <div className="md:max-w-7xl mx-auto text-center max-md:divide-x divide-y divide-blackBlue">
+          <div className="grid md:grid-cols-4 grid-cols-2 max-md:divide-y divide-x divide-blackBlue">
             <div className="py-2.5 px-6">
-              <h3 className="text-white text-2xl">Available across 20 Eurozone countries</h3>
+              <h3 className="text-lg md:text-2xl leading-[120%] text-white">Available across 20 Eurozone countries</h3>
             </div>
             <div className="py-2.5 px-6">
-              <h3 className="text-white text-2xl">Multiple payment options</h3>
+              <h3 className="text-lg md:text-2xl leading-[120%] text-white">Multiple payment options</h3>
             </div>
             <div className="py-2.5 px-6">
-              <h3 className="text-white text-2xl">Convenient ways of confirming your identity</h3>
+              <h3 className="text-lg md:text-2xl leading-[120%] text-white">Convenient ways of confirming your identity</h3>
             </div>
             <div className="py-2.5 px-6">
-              <h3 className="text-white text-2xl">Fast and secure transfers</h3>
+              <h3 className="text-lg md:text-2xl leading-[120%] text-white">Fast and secure transfers</h3>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center  divide-x divide-blackBlue">
-            <div className="w-64 py-2.5 px-6">
-              <h3 className="text-white text-2xl">Lock your exchange rates</h3>
+          <div className="flex flex-wrap justify-center divide-x max-md:divide-y divide-blackBlue">
+            <div className="w-1/2 md:w-64 py-2.5 px-6">
+              <h3 className="text-lg md:text-2xl leading-[120%] text-white">Lock your exchange rates</h3>
             </div>
-            <div className="w-64 py-2.5 px-6">
-              <h3 className="text-white text-2xl">Transfer within 30 minutes to ICICI accounts 24x7</h3>
+            <div className="w-1/2 md:w-64 py-2.5 px-6">
+              <h3 className="text-lg md:text-2xl leading-[120%] text-white">Transfer within 30 minutes to ICICI accounts 24x7</h3>
             </div>
-            <div className="w-64 py-2.5 px-auto sm:px-6">
-              <h3 className="text-white text-2xl">Minimalservice charge</h3>
+            <div className="w-full md:w-64 py-2.5 px-auto sm:px-6">
+              <h3 className="text-lg md:text-2xl leading-[120%] text-white">Minimalservice charge</h3>
             </div>
           </div>
         </div>
       </section>
       <section className="my-20 w-full">
-        <h2 className="text-center text-4xl text-blackBlue mb-16">Available across {selectionsContent.length} countries</h2>
         <Suspense fallback={<Loading />}>
           <SliderStick />
         </Suspense>
@@ -256,25 +150,25 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
       <section id="contact-us" className="w-full py-14 px-1 bg-[url('../assets/images/sections/contactbg.jpg')] bg-no-repeat">
         <h2 className="text-center text-4xl text-white">Get in touch</h2>
-        <div className="mx-auto flex items-center justify-center py-20">
-          <div className="flex flex-col w-1/3 relative">
+        <div className="mx-auto flex max-sm:flex-col items-center justify-center py-16 md:py-20 gap-3">
+          <div className="flex flex-col md:w-1/3 relative">
             <Image
               src={require("@images/contacts/contact-phone.svg")}
               alt="Illustration of phone"
-              className="mx-auto"
+              className="mx-auto max-sm:w-2/5"
             />
-            <ul className="text-white text-center text-2xl">
+            <ul className="text-base md:text-lg lg:text-2xl text-white text-center">
               <li>India: +91 407100 4532</li>
               <li>Europe: 00 800 4499 6532</li>
             </ul>
           </div>
-          <div className="flex flex-col w-1/3 relative">
+          <div className="flex flex-col md:w-1/3 relative">
             <Image
               src={require("@images/contacts/contact-email.svg")}
               alt="Illustration of email"
-              className="mx-auto"
+              className="mx-auto max-sm:w-2/5"
             />
-            <a className="text-white text-center text-2xl" href="#">europe@company.com</a>
+            <a className="text-base md:text-lg lg:text-2xl text-white text-center" href="#">europe@company.com</a>
           </div>
         </div>
       </section>
@@ -296,7 +190,7 @@ export default function Home() {
       </section>
       <footer className="w-full">
         <div className="w-1/2 mx-auto">
-          <ul className="flex items-center justify-center divide-x divide-blackBlue border-y-2 relative animate-fade delay-250">
+          <ul className="flex flex-wrap items-center justify-center md:divide-x divide-blackBlue border-y-2 relative animate-fade delay-250">
             <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab1" target="_blank">Imprint</a></li>
             <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab2" target="_blank">User Identification</a></li>
             <li className="my-2 px-2 text-sm"><a href="/en/sociallink#gototab3" target="_blank">Privacy Policy</a></li>

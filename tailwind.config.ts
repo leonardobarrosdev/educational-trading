@@ -22,11 +22,15 @@ const config: Config = {
       body: ['Muli', 'Helvetica', 'Arial', 'sans-serif']
     },
     fontSize: {
-      sm: ['14px', '20px'],
-      base: ['16', '24px'],
-      lg: ['20px', '28px'],
-      xl: ['24px', '32px'],
-      xxl: ['40px', '48px'],
+      xs: '0.75rem',
+      sm: '0.8rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
     },
     colors: {
       primary: '#0C457C',

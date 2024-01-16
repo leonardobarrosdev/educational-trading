@@ -3,7 +3,10 @@ import 'material-symbols'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Transfer Money',
+  title: {
+    template: '% | Transfer Money',
+    default: 'Transfer Money'
+  },
   description: 'Transfer Money to India from Europe Online - Send...',
 }
 

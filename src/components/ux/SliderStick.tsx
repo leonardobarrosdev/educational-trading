@@ -125,7 +125,7 @@ function SamplePrevArrow(props: any) {
 export default class MultipleItems extends Component {
   render() {
     const settings = {
-      className: "m-auto max-w-7xl",
+      className: "mx-auto max-w-7xl",
       infinite: true,
       slidesToShow: 10,
       slidesToScroll: 3,
@@ -168,17 +168,21 @@ export default class MultipleItems extends Component {
     }
     
     return (
+      <>
+      <h2 className="text-lg md:text-2xl lg:text-4xl text-center text-blackBlue mb-16">Available across {selectionsContent.length} countries</h2>
       <Slider {...settings}>
         {selectionsContent.map((content, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <Image
-                src={content.image}
-                alt={content.description}
-              />
-              <h5 className="text-2xl">{content.msg}</h5>
-            </div>
+          <div key={index} className="flex flex-col items-center justify-center">
+            <Image
+              src={content.image}
+              alt={content.description}
+              className="w-md md:w-md lg:w-auto place-self-center"
+            />
+            <h5 className="text-base lg:text-xl">{content.msg}</h5>
+          </div>
         ))}
       </Slider>
+      </>
     );
   }
 }

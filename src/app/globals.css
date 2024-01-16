@@ -52,7 +52,6 @@ body {
 .text-2xl { font-size: 1.5rem }
 .text-4xl { font-size: 2.5rem }
 .text-highlight {
-  font-size: 2.25rem;
   text-transform: uppercase;
   color: var(--danger)
 }
@@ -101,4 +100,21 @@ body {
   'GRAD' 0,
   'opsz' 24;
   color: var(--primary)
+}
+
+/*********************** ul diamon list customized ******************/
+ul.diamond-list-style > li {
+  padding-left: 1.5rem;
+  position: relative;
+  &:after {
+    content: '';
+    height: 0.4em;
+    width: 0.4em;
+    background-color: var(--white);
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 0.25rem;
+    left: 0;
+  }
 }

@@ -18,10 +18,10 @@ export default function NavBar() {
 
   return (
     <nav className="mx-auto md:max-w-7xl w-11/12 relative">
-      <div className="flex items-center justify-between gap-x-4 md:gap-x-6">
+      <div className="flex items-center justify-between gap-x-4 lg:gap-x-6">
         <div className="flex items-center lg:gap-x-24">
-          <h1 className="text-xl md:text-xxl weight-400 font-normal">Brand</h1>
-          <ul className="hidden md:flex">
+          <h1 className="text-xl md:text-2xl weight-400 font-normal">Brand</h1>
+          <ul className="lg:flex hidden">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a href={link.link} className="md:py-8 md:px-4 hover:bg-danger hover:text-[white]">{link.name}</a>
@@ -32,7 +32,7 @@ export default function NavBar() {
         <div className="flex items-center gap-x-2 md:gap-x-3">
           <Button type="button" title="SIGN UP" onClick={() => router.push("/register")} />
           <Button type="button" title="LOGIN" onClick={() => router.push("/login")} />
-          <div className="-mr-1 md:hidden">
+          <div className="-mr-1 lg:hidden">
             <Dropdown
               label=""
               size="md"

@@ -50,7 +50,7 @@ const sliderCustomService = [
 export default class CustomService extends Component {
   render() {
     const settings = {
-      className: "w-full flex gap-x-3",
+      className: "w-full flex gap-x-1 md:gap-x-3",
       infinite: true,
       slidesToShow: 4,
       slidesToScroll: 1,
@@ -59,19 +59,37 @@ export default class CustomService extends Component {
       speed: 450,
       pauseOnHover: true,
       arrows: false,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 400,
+          settings: {
+            className: "center",
+            centerMode: true,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     }
 
     return (
       <Slider {...settings}>
         {sliderCustomService.map((content, index) => (
           <div key={index} className="relative">
-            <div className="flex items-center gap-3 bg-blackBlue py-7 rounded-md max-w-[95%]">
+            <div className="flex items-center gap-1 lg:gap-3 bg-blackBlue py-1 md:py-3 lg:py-7 rounded-md max-w-[95%]">
               <Image
                 src={content.image}
                 alt={content.description}
                 className="px-1"
               />
-              <h3 className="text-white text-3xl font-medium inline">{content.msg}</h3>
+              <h3 className="text-white text-sm md:text-base lg:text-xl font-medium inline">{content.msg}</h3>
             </div>
           </div>
         ))}
