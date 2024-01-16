@@ -12,8 +12,8 @@ export default function Dashboard() {
     <main className="flex min-h-screen flex-col items-center">
       <Header />
       <TopNavBar />
-      <section className="mx-auto max-w-7xl my-10">
-        <div className="flex gap-x-6">
+      <section className="max-lg:mx-3 md:mx-auto lg:max-w-7xl my-10">
+        <div className="flex max-md:flex-col max-lg:justify-around gap-x-3 lg:gap-x-6">
           <div className="flex flex-col gap-y-6">
             <div className="flex flex-col gap-y-3">
               <div className="flex gap-x-3">
@@ -27,7 +27,7 @@ export default function Dashboard() {
               </div>
               <p className="text-[0.75rem]">Los visibled 24-15-2023 14:43:08 H</p>
             </div>
-            <div className="">
+            <div>
               <CardTop title="MY SHORTCUTS" titleIcon="star" removeIcon={true} closeIcon={true} />
               <Card>
                 <div>
@@ -41,8 +41,8 @@ export default function Dashboard() {
               </Card>
             </div>
           </div>
-          <div className="w-4/5">
-            <div className="flex flex-col gap-y-2 mb-10">
+          <div className="sm:w-[70%] lg:w-4/5">
+            <div className="flex flex-col gap-y-2 my-5 md:mb-10">
                 <Breadcrumb />
                 <hr className="w-full text-2xl" />
               </div>

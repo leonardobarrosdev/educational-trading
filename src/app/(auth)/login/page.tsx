@@ -32,7 +32,7 @@ export default function LogIn() {
       <Header />
       <TopNavBar />
       <section className="w-full my-10">
-        <div className="max-w-7xl mx-auto flex max-sm-flex-col-2 justify-between items-center">
+        <div className="max-w-7xl mx-auto flex max-md:flex-col justify-around lg:justify-between items-center max-sm-flex-col-2">
           <div className="md:w-2/5">
             <CardTop title="Login to International Banking" titleIcon="lock" />
             <Card>
@@ -83,7 +83,7 @@ export default function LogIn() {
                       </select>
                     </div>
                   </div>
-                  <div className="md:flex md:items-center justify-center gap-3">
+                  <div className="flex md:items-center justify-center gap-2 md:gap-3">
                     <Button title="MY PROFILE" />
                     <div className="flex items-center justify-center px-2">
                       <span className="material-symbols-outlined text-primary" style={{transform: "rotate(90deg)"}}>change_history</span>
@@ -109,6 +109,23 @@ export default function LogIn() {
               </div>
             </Card>
           </div>
+        </div>
+      </section>
+      <section className="w-full my-10">
+        <div className="w-10/12 lg:max-w-7xl mx-auto">
+          <CardTop title="Important security information:" />
+          <Card>
+            <ul className="list-disc px-5">
+              <li>Before logging in please share that the URL address on the address bar of your Internet browser start you with...</li>
+              <li>Never provide your User ID or password...</li>
+              <li>Do not enter login or other sensitive information in any pop up window</li>
+              <li>Verify the site is security certificate by clicking on the prodicck icon of your Internet browser. For more detail: <a className="underline underline-blackBlue" href="#">Click here</a></li>
+            </ul>
+          </Card>
+          <CardTop title="Digital segurity:" />
+          <Card>
+            <p className="text-base px-5">-----------------</p>
+          </Card>
         </div>
       </section>
     </main>

@@ -1,12 +1,14 @@
 "use client" 
 
+import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Dropdown } from 'flowbite-react';
+import { Dropdown } from 'flowbite-react'
 
 import { Button } from "../ui/Button"
 
 export default function NavBar() {
   const router = useRouter()
+  let [open, setOpen] = useState(false)
   let navLinks = [
     {name: "HOME", link: "#home"},
     {name: "EXCHANGE RATER", link: "#exchange-rater"},
@@ -37,7 +39,7 @@ export default function NavBar() {
               label=""
               size="md"
               dismissOnClick={false}
-              renderTrigger={() => <span className="material-symbols-outlined">menu</span>}
+              renderTrigger={() => <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span>}
             >
               {navLinks.map((link) => (
                 <Dropdown.Item key={link.link}><a href={link.link}>{link.name}</a></Dropdown.Item>
