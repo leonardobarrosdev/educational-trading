@@ -48,7 +48,8 @@ export default function LogIn() {
                       <Input 
                         id="userid"
                         type="text"
-                        value="Jane Doe"
+                        placeholder="Jone Doe"
+                        required
                         onChange={handleChange}
                       />
                     </div>
@@ -64,6 +65,7 @@ export default function LogIn() {
                         id="password"
                         type="password"
                         placeholder="******************"
+                        required
                         onChange={handleChange}
                       />
                     </div>
