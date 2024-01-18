@@ -4,10 +4,12 @@ import { useRef } from "react"
 
 export function ScrollToTopButton() {
   const refTop = useRef<HTMLDivElement | null>(null);
-  let scroll = true
+  // Identify scroll and applay display: none that's hidden
+  // let scroll = (window.innerHeight + 10) < window.
 
   function handleClick() {
-    refTop.current?.scrollIntoView({behavior: "smooth"})
+    const element = document.getElementById("home")
+    element?.scrollIntoView({behavior: "smooth"})
   }
 
   return (
