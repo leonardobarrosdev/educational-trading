@@ -1,11 +1,7 @@
 "use client"
 
-import { useRef } from "react"
-
 export function ScrollToTopButton() {
-  const refTop = useRef<HTMLDivElement | null>(null);
-  // Identify scroll and applay display: none that's hidden
-  // let scroll = (window.innerHeight + 10) < window.
+  let scroll = true
 
   function handleClick() {
     const element = document.getElementById("home")
