@@ -102,10 +102,10 @@ export default function LogIn() {
                 <div className="flex flex-col justify-around items-center">
                   <h1 className="text-center text-danger text-2xl">May I help you?</h1>
                   <ul className="mt-8 grid gap-y-4">
-                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined mr-3">person</span><a href="#">New User? Get UserID</a></li>
-                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined mr-3">build</span><a href="#">Password? Get Password</a></li>
-                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined mr-3">construction</span><a href="#">Trouble logging in?</a></li>
-                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined mr-3">preview</span><a href="#">View Online Demo</a></li>
+                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined text-primary mr-3">person</span><a href="#">New User? Get UserID</a></li>
+                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined text-primary mr-3">build</span><a href="#">Password? Get Password</a></li>
+                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined text-primary mr-3">construction</span><a href="#">Trouble logging in?</a></li>
+                    <li className="flex items-center hover:text-danger"><span className="material-symbols-outlined text-primary mr-3">preview</span><a href="#">View Online Demo</a></li>
                   </ul>
                 </div>
               </div>

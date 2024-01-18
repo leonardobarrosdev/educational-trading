@@ -1,10 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-
 export default function Header() {
-  let [open, setOpen] = useState(false)
-
   return (
     <header className="w-full items-center bg-white">
       <div className="max-lg:mx-3 lg:mx-auto lg:max-w-7xl">
@@ -21,9 +15,6 @@ export default function Header() {
                 <a href="#" className="md:mx-3 md:my-0 my-3 hover:md:text-danger">Email Us</a>
               </li>
             </ul>
-            <div className="-mr-1 md:hidden">
-              {/* <span onClick={() => setOpen(!open)} className="material-symbols-outlined text-3xl">{open? "close" : "menu"}</span> */}
-            </div>
           </div>
         </nav>
       </div>

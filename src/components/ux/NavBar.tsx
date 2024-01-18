@@ -38,9 +38,9 @@ export default function NavBar() {
             <div>
               <Menu.Button
                 onClick={() => setOpen(!open)}
-                className="inline-flex w-full justify-center rounded-md bg-gray/30 px-2 md:px-4 py-1 md:py-2 text-sm font-normal md:font-medium text-white hover:bg-gray focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+                className="inline-flex w-full justify-center rounded-md px-2 md:px-4 py-1 md:py-2 text-sm font-normal md:font-medium hover:bg-blackBlue/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
                 >
-                  <span className="material-symbols-outlined">
+                  <span className="material-symbols-outlined text-primary">
                     {open ? "close" : "menu"}
                   </span>
               </Menu.Button>
@@ -56,7 +56,7 @@ export default function NavBar() {
             >
               <Menu.Items className="list-none absolute right-0 mt-2 w-64 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
                 {navLinks.map((link, index) => (
-                  <a href={link.link} key={index}>
+                  <a href={link.link} key={index} onClick={() => setOpen(!open)}>
                     <div className="w-full px-2 hover:bg-danger hover:text-white text-blackBlue">
                       <Menu.Item>
                         <li className="text-sm px-2 py-2">{link.name}</li>

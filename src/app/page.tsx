@@ -8,6 +8,7 @@ import { HighlightButton } from '@components/ui/HighlightButton'
 import Loading from '@components/ui/loading'
 import CustomService from '@/components/ux/CustomService'
 import NavBar from '@/components/ux/NavBar'
+import { ScrollToTopButton } from '@/components/ui/ScrollToTopButton'
 
 const stepsForTransfer = [
   {
@@ -180,8 +181,8 @@ export default function Home() {
       </section>
       </Suspense>
       <section className="w-full h-40 flex flex-col items-center justify-center">
+        <h4 className="text-blackBlue text-md">Download MoneyCompany app</h4>
         <Suspense fallback={<Loading />}>
-          <h4 className="text-blackBlue text-md">Download MoneyCompany app</h4>
           <div className="flex justify-center gap-2 mt-2">
             <Image
               src={require("@images/sections/googleplay.png")}
@@ -208,6 +209,7 @@ export default function Home() {
         </div>
         <p className="text-center text-blckBlue my-3">Copyright©2020. All rights Reserved.</p>
       </footer>
+      <ScrollToTopButton />
     </main>
   )
 }

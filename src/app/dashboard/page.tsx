@@ -17,7 +17,7 @@ export default function Dashboard() {
           <div className="flex flex-col gap-y-6">
             <div className="flex flex-col gap-y-3">
               <div className="flex gap-x-3">
-                <span className="material-symbols-outlined">lock</span>
+                <span className="material-symbols-outlined text-primary">lock</span>
                 <h3 className="tex-2xl text-blackBlue">WELCOME BACK</h3>
               </div>
               <p>ARCHIT JAN</p>
